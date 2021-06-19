@@ -33,7 +33,7 @@ const Home = ({ events }: { events: event[] }) => {
 };
 export default Home;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   // test git
   const res = await fetch(`${API_URL}/events?_sort=date:ASC&_limit=4`);
   const events: event[] = await res.json();
