@@ -1,16 +1,11 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styled from 'styled-components';
 import Layout from '../components/Layout';
 import { NextPage, GetServerSideProps } from 'next';
-import { GetStaticProps, GetStaticPaths } from 'next';
 import { API_URL } from '../config';
 import EventItem from '../components/EventItem';
 import Link from 'next/link';
 import { event } from './../config/types';
 import { Title } from '../styles/styles';
 import Features from './../components/Features';
-import { Flex } from '../styles/styles';
 
 const Home = ({ events }: { events: event[] }) => {
   return (
@@ -37,5 +32,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
   // test git
   const res = await fetch(`${API_URL}/events?_sort=date:ASC&_limit=4`);
   const events: event[] = await res.json();
-  return { props: { events: events }, revalidate: 1 };
+  return { props: { events: events } };
 };
