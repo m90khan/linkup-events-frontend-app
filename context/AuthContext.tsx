@@ -17,7 +17,7 @@ interface AppContextInterface {
   logout: () => Promise<void>;
   checkUserLoggedIn?: () => Promise<void>;
 }
-export const AuthContext = createContext<AppContextInterface | any>({});
+export const AuthContext = createContext<AppContextInterface | null>(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -87,13 +87,17 @@ export const AuthProvider = ({ children }) => {
 
   // Check if user is logged in
   const checkUserLoggedIn = async () => {
-    const res = await fetch(`${NEXT_URL}/api/user`);
-    const data = await res.json();
+    try {
+      const res = await fetch(`${NEXT_URL}/api/user`);
+      const data = await res.json();
 
-    if (res.ok) {
-      setUser(data.user);
-    } else {
-      setUser(null);
+      if (res.ok) {
+        setUser(data.user);
+      } else {
+        setUser(null);
+      }
+    } catch (err) {
+      console.log('not logged in');
     }
   };
 
