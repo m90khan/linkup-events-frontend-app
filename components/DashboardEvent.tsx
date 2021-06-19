@@ -5,17 +5,15 @@ import styled from 'styled-components';
 export default function DashboardEvent({ evt, handleDelete }) {
   return (
     <Event>
-      <h4>
-        <Link href={`/events/${evt.slug}`}>
-          <a>{evt.name}</a>
-        </Link>
-      </h4>
+      <Link href={`/events/${evt.slug}`}>
+        <h4>{evt.name}</h4>
+      </Link>
       <Link href={`/events/edit/${evt.id}`}>
-        <a className='edit'>
+        <a className='btn'>
           <FaPencilAlt /> <span>Edit Event</span>
         </a>
       </Link>
-      <a href='#' className='delete' onClick={() => handleDelete(evt.id)}>
+      <a href='#' className='btn btn-secondary' onClick={() => handleDelete(evt.id)}>
         <FaTimes /> <span>Delete</span>
       </a>
     </Event>
@@ -27,22 +25,20 @@ const Event = styled.div`
   padding: 10px;
   border-radius: 5px;
   border: 1px #ddd solid;
-  background-color: #f4f4f4;
+  background-color: #fffefe;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 
   h4 {
     margin-bottom: 10px;
+    color: black;
+    font-size: 1.8rem;
     flex: 2;
   }
 
   .edit,
   .delete {
     margin: 10px;
-  }
-
-  .delete {
-    color: red;
   }
 `;

@@ -12,7 +12,6 @@ import { useRouter } from 'next/router';
 export default function Header() {
   const { user, logout } = useContext(AuthContext);
   const router = useRouter();
-  console.log(router.pathname);
   return (
     <HeaderContainer
       initial={{ opacity: 0, y: -180 }}
@@ -30,7 +29,10 @@ export default function Header() {
             <h2>LINKUP</h2>
           </div>
         </Link>
-        <nav className='nav' style={!user && { justifyContent: 'flex-end' }}>
+        <nav
+          className='nav'
+          style={!user ? { justifyContent: 'flex-end' } : { justifyContent: 'center' }}
+        >
           {router.pathname != '/' && <Search />}
           <li>
             <Link href='/events'>

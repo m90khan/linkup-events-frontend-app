@@ -28,11 +28,20 @@ export default function Events({ events, page, total }: Props) {
       ))}
 
       {events.length > 0 && (
-        <Link href='/events'>
-          <a className='btn-secondary'>View All Events</a>
-        </Link>
+        <>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Link href='/events'>
+              <a className='btn btn-large'>View All Events</a>
+            </Link>
+            <Pagination page={page} total={total} />
+          </div>
+        </>
       )}
-      <Pagination page={page} total={total} />
     </Layout>
   );
 }

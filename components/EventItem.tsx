@@ -10,8 +10,8 @@ interface Props {
 }
 const EventItem = ({ evt }: { evt: event }): ReactElement => {
   return (
-    <Item>
-      <Link href={`/events/${evt.slug}`}>
+    <Link href={`/events/${evt.slug}`}>
+      <Item>
         <div className='img'>
           <Image
             src={
@@ -22,25 +22,25 @@ const EventItem = ({ evt }: { evt: event }): ReactElement => {
             height={80}
           />
         </div>
-      </Link>
 
-      <div className='info'>
-        <span>
-          {new Date(evt.date).toLocaleDateString('en-US')} at {evt.time}
-        </span>
-        <Link href={`/events/${evt.slug}`}>
-          <h3>{evt.name}</h3>
-        </Link>
+        <div className='info'>
+          <span>
+            {new Date(evt.date).toLocaleDateString('en-US')} at {evt.time}
+          </span>
+          <Link href={`/events/${evt.slug}`}>
+            <h3>{evt.name}</h3>
+          </Link>
 
-        <p>{evt.description.slice(0, 200)}...</p>
-      </div>
+          <p>{evt.description.slice(0, 200)}...</p>
+        </div>
 
-      <div>
-        <Link href={`/events/${evt.slug}`}>
-          <a className='btn'>Details</a>
-        </Link>
-      </div>
-    </Item>
+        {/* <div>
+          <Link href={`/events/${evt.slug}`}>
+            <a className='btn'>Details</a>
+          </Link>
+        </div> */}
+      </Item>
+    </Link>
   );
 };
 
@@ -49,6 +49,7 @@ const Item = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
+  cursor: pointer;
   padding: 13px;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
 

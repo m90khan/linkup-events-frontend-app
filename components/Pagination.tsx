@@ -7,13 +7,13 @@ export default function Pagination({ page, total }: { page: number; total: numbe
     <>
       {page > 1 && (
         <Link href={`/events?page=${page - 1}`}>
-          <a className='btn-secondary'>Prev</a>
+          <a className='btn btn-large '>Prev</a>
         </Link>
       )}
 
       {page < lastPage && (
         <Link href={`/events?page=${page + 1}`}>
-          <a className='btn-secondary'>Next</a>
+          <a className='btn btn-large'>Next</a>
         </Link>
       )}
     </>

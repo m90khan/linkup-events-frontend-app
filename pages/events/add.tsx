@@ -62,7 +62,9 @@ export default function AddEventPage({ token }) {
 
   return (
     <Layout title='Add New Event' keywords='event manager'>
-      <Link href='/events'>Go Back</Link>
+      <Link href='/events'>
+        <p className='btn'>Go Back</p>
+      </Link>
       <h1>Add Event</h1>
       <ToastContainer />
       <Form onSubmit={handleSubmit}>
@@ -141,7 +143,7 @@ export default function AddEventPage({ token }) {
           <p>Note: Address should include zip code</p>
         </div>
 
-        <input type='submit' value='Add Event' className='btn' />
+        <input type='submit' value='Add Event' className='btn btn-large' />
       </Form>
     </Layout>
   );

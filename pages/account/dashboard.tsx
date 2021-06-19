@@ -71,6 +71,5 @@ const Dashboard = styled.div`
 
   h3 {
     font-size: 25px;
-    color: red;
   }
 `;

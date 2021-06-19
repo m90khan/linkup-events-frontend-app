@@ -13,9 +13,9 @@ const SearchPage = ({ events }: { events: event[] }) => {
   return (
     <Layout title='Search Results'>
       <Link href='/events'>
-        <a className='btn-secondary'>Go Back</a>
+        <a className='btn'>Go Back</a>
       </Link>
-      <h1 style={{ marginTop: '2rem', fontSize: '2.5rem', color: 'red' }}>
+      <h1 style={{ marginTop: '2rem', fontSize: '2.5rem' }}>
         Search Results for {router.query.term}
       </h1>
       {events.length === 0 && <h3>No events to show</h3>}

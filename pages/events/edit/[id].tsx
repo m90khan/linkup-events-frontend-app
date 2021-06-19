@@ -90,7 +90,9 @@ export default function EditEventPage({ evt, token }: { evt: event; token: strin
 
   return (
     <Layout title='Add New Event'>
-      <Link href='/events'>Go Back</Link>
+      <Link href='/events'>
+        <a className='btn'>Go Back</a>
+      </Link>
       <h1>Edit Event</h1>
       <ToastContainer />
       <Form onSubmit={handleSubmit}>
@@ -170,14 +172,14 @@ export default function EditEventPage({ evt, token }: { evt: event; token: strin
         <input
           type='submit'
           value='Update Event'
-          className='btn'
+          className='btn btn-large'
           style={{ fontWeight: 700 }}
         />
       </Form>
 
       <h2>Event Image</h2>
       {imagePreview ? (
-        <Image src={imagePreview} height={100} width={170} />
+        <Image src={imagePreview} height={200} width={500} />
       ) : (
         <div>
           <p>No image uploaded</p>
@@ -185,7 +187,7 @@ export default function EditEventPage({ evt, token }: { evt: event; token: strin
       )}
 
       <div>
-        <button onClick={() => setShowModal(true)} className='btn-secondary btn-icon'>
+        <button onClick={() => setShowModal(true)} className='btn btn-icon'>
           <FaImage /> Set Image
         </button>
       </div>
