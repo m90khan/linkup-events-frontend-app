@@ -19,9 +19,7 @@ const Home = ({ events }: { events: event[] }) => {
       {events.length === 0 && <h3>No events to show</h3>}
 
       <Title>Upcoming Events</Title>
-      {events.map((evt: event) => (
-        <EventItem key={evt.id} evt={evt} />
-      ))}
+      {events && events.map((evt: event) => <EventItem key={evt.id} evt={evt} />)}
 
       {events.length > 0 && (
         <div style={{ textAlign: 'center', padding: '4rem' }}>
