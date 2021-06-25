@@ -22,7 +22,7 @@ export default function Features() {
 
           <div className='feature-content'>
             <h4 className='secondary-heading'>Add Event</h4>
-            <p className='desc-text'>Add details about your event</p>
+            <p className='desc-text'>Add an event including the meeting link</p>
           </div>
         </div>
         <div className='feature'>
@@ -30,7 +30,7 @@ export default function Features() {
 
           <div className='feature-content'>
             <h4 className='secondary-heading'>Present</h4>
-            <p className='desc-text'>Users will join your event</p>
+            <p className='desc-text'>Broadcast so users can join the event</p>
           </div>
         </div>
       </div>
