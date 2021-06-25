@@ -70,20 +70,13 @@ const FeaturesContainer = styled.div`
     background: var(--white);
 
     border-radius: 1rem;
-    height: 40vh;
+    height: 42vh;
 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    img {
-      width: 4rem;
-      height: auto;
-      object-fit: cover;
-      ${media('<=desktop')} {
-        width: 30%;
-      }
-    }
+
     &-content {
       text-align: center;
 
@@ -94,3 +87,12 @@ const FeaturesContainer = styled.div`
     }
   }
 `;
+
+/* img {
+      width: 4rem;
+      height: auto;
+      object-fit: cover;
+      ${media('<=desktop')} {
+        width: 30%;
+      }
+    } */
