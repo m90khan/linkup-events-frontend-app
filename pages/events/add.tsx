@@ -132,6 +132,16 @@ export default function AddEventPage({ token }) {
         </div>
 
         <div>
+          <div style={{ padding: '2rem 0' }}>
+            <label htmlFor='link'>Meeting Link</label>
+            <input
+              type='text'
+              name='link'
+              id='link'
+              value={values.link}
+              onChange={handleInputChange}
+            />
+          </div>
           <label htmlFor='description'>Event Description</label>
           <textarea
             name='description'
